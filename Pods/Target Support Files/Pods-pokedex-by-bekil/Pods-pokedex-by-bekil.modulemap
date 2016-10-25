@@ -1,0 +1,6 @@
+framework module Pods_pokedex_by_bekil {
+  umbrella header "Pods-pokedex-by-bekil-umbrella.h"
+
+  export *
+  module * { export * }
+}
