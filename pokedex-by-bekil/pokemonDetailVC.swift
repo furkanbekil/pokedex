@@ -30,6 +30,11 @@ class pokemonDetailVC: UIViewController {
 
 
         nameLbl.text = pokemon.name
+        mainImg.image = UIImage(named: "\(pokemon.pokedexId)")
+        pokemon.downloadPokemonDetails { 
+            
+        }
+        
     }
     
     @IBAction func backBtnPressed(_ sender: AnyObject) {

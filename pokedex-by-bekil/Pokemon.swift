@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Pokemon {
     
@@ -32,7 +33,39 @@ class Pokemon {
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokedexId = pokedexId
+        
+        _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
+        
+        
     }
     
+    func downloadPokemonDetails(completed: DownloadComplete) {
+        
+        Alamofire.request(_pokemonUrl).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let dict = response.result.value as? Dictionary<String, AnyObject> {
+                
+                if let weight = dict["weight"] as? Int {
+                    self._weight = "\(weight)"
+                }
+                
+                if let height = dict["height"] as? Int {
+                    self._height = "\(height)"
+                }
+                
+                
+                print(self._weight)
+                print(self._height)
+            }
+        }
+        
+        
+    
+    
+    }
     
 }
