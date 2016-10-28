@@ -30,6 +30,42 @@ class Pokemon {
         return _pokedexId
     }
     
+    
+    var type: String {
+        if _type == nil {
+            _type = ""
+        }
+        return _type
+    }
+    
+    var attack: String {
+        if _type == nil {
+            _type = ""
+        }
+        return _attack
+    }
+    
+    var defense: String {
+        if _type == nil {
+            _type = ""
+        }
+        return _defense
+    }
+    
+    var height: String {
+        if _type == nil {
+            _type = ""
+        }
+        return _height
+    }
+    
+    var weight: String {
+        if _type == nil {
+            _type = ""
+        }
+        return _weight
+    }
+    
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokedexId = pokedexId
@@ -39,7 +75,7 @@ class Pokemon {
         
     }
     
-    func downloadPokemonDetails(completed: DownloadComplete) {
+    func downloadPokemonDetails(completed: @escaping DownloadComplete) {
         
         Alamofire.request(_pokemonUrl).responseJSON { response in
             print(response.request)  // original URL request
@@ -60,7 +96,53 @@ class Pokemon {
                 
                 print(self._weight)
                 print(self._height)
-            }
+                
+                if let types = dict["types"] as? [Dictionary<String, AnyObject>] , types.count > 0 {
+                    
+                    if let type = types[0]["type"] {
+                        if let name = type["name"] as? String {
+                            self._type = "\(name)"
+                        }
+                        
+                    }
+                    
+                    if types.count > 1 {
+                        for _ in 1 ..< types.count {
+                            if let type = types[1]["type"] {
+                                if let name = type["name"] as? String {
+                                    self._type! += "/\(name)"
+                                }
+                            }
+                        }
+                    }
+                    
+                } else {
+                    self._type = "merhaba"
+                }
+                print(self._type)
+                
+                if let stats = dict["stats"] as? [Dictionary<String, AnyObject>], stats.count > 0 {
+                    if let stat = stats[2]["base_stat"] as? Int {
+                        self._attack = "\(stat)"
+                    } else {
+                        self._attack = "there is no attack"
+                    }
+                    
+                    if let stat = stats[1]["base_stat"] as? Int {
+                        self._defense = "\(stat)"
+                    } else {
+                        self._defense = "there is no defense"
+                    }
+                }
+                
+                print(self._attack)
+                print(self._defense)
+                
+                
+            }; completed()
+            
+            
+            
         }
         
         
