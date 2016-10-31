@@ -288,7 +288,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's miraculous that, in the world of Pokemon, the Pokemon haven't risen up and destroyed " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGo-AF-L7d">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="99" id="3Ki-UJ-Vti"/>
-                                    <constraint firstAttribute="width" constant="263" id="E0D-a3-e6x"/>
+                                    <constraint firstAttribute="width" constant="235" id="E0D-a3-e6x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -306,7 +306,7 @@
                             <constraint firstItem="Ml2-X3-lMj" firstAttribute="leading" secondItem="V8n-rg-C3M" secondAttribute="leadingMargin" id="B4M-UB-4L4"/>
                             <constraint firstItem="hUn-Gv-QbI" firstAttribute="leading" secondItem="V8n-rg-C3M" secondAttribute="leadingMargin" id="FW0-P2-MiY"/>
                             <constraint firstItem="ept-eV-n0k" firstAttribute="trailing" secondItem="V8n-rg-C3M" secondAttribute="trailingMargin" id="Gcz-qE-FB1"/>
-                            <constraint firstItem="dGo-AF-L7d" firstAttribute="trailing" secondItem="V8n-rg-C3M" secondAttribute="trailingMargin" constant="28" id="HeT-g4-tMU"/>
+                            <constraint firstItem="dGo-AF-L7d" firstAttribute="trailing" secondItem="V8n-rg-C3M" secondAttribute="trailingMargin" id="HeT-g4-tMU"/>
                             <constraint firstItem="nT7-iL-A9F" firstAttribute="top" secondItem="zBh-jm-rll" secondAttribute="bottom" constant="75" id="HvZ-91-c8F"/>
                             <constraint firstItem="uo0-7E-zoq" firstAttribute="top" secondItem="F9k-rt-TBp" secondAttribute="bottom" constant="73" id="ISd-uK-V4k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LTY-7j-PXl" secondAttribute="trailing" constant="29" id="Kgk-JA-jUs"/>
