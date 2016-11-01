@@ -132,7 +132,7 @@
                     <connections>
                         <outlet property="collection" destination="PY3-6n-JZU" id="hAV-Ma-bXG"/>
                         <outlet property="searchBar" destination="vWv-Z1-hMy" id="JXX-LD-Arj"/>
-                        <segue destination="0n2-Jl-fZL" kind="show" identifier="pokemonDetailVC" id="fuU-FO-AaF"/>
+                        <segue destination="0n2-Jl-fZL" kind="showDetail" identifier="pokemonDetailVC" action="showViewController:sender:" id="fuU-FO-AaF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -179,9 +179,14 @@ class Pokemon {
                     
                     if let dictEvo = response.result.value as? Dictionary<String, AnyObject> {
                         if let evolutions = dictEvo["evolutions"] as? [Dictionary<String, AnyObject>] {
-                            if let evoName = evolutions[0]["to"] as? String {
-                                
-                               
+                            if evolutions.isEmpty {
+                                self._nextEvolutionId = ""
+                                self._evolutionName = ""
+                                self._nextEvolutionLvl = ""
+                            } else {
+                                if let evoName = evolutions[0]["to"] as? String {
+                                    
+                                    
                                     
                                     if let uri = evolutions[0]["resource_uri"] as? String {
                                         
@@ -201,11 +206,9 @@ class Pokemon {
                                         
                                         
                                     }
-                            } else {
-                                self._nextEvolutionId = ""
-                                self._evolutionName = ""
-                                self._nextEvolutionLvl = ""
+                                }
                             }
+                            
                             
                                 
                             

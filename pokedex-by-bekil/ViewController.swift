@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftSpinner
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +32,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         initAudio()
         parsePokemonCSV()
         
+
+        
     }
+    
+    
     
     
     func initAudio() {
@@ -113,6 +119,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         performSegue(withIdentifier: "pokemonDetailVC", sender: poke)
         
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -163,11 +170,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pokemonDetailVC" {
+            
             if let detailsVC = segue.destination as? pokemonDetailVC {
                 if let poke = sender as? Pokemon {
                     detailsVC.pokemon = poke
                 }
             }
+            
+            
+            
         }
     }
 }

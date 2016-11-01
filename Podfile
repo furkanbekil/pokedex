@@ -7,6 +7,9 @@ target 'pokedex-by-bekil' do
 
   # Pods for pokedex-by-bekil
   pod 'Alamofire'
+  pod 'SwiftSpinner'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|
